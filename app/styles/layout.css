@@ -105,6 +105,7 @@
 /** Main Content **/
 
 .main-content {
+	overflow-y: auto;
 	height: calc(100vh - var(--header-height));
 	padding: 16px;
 }

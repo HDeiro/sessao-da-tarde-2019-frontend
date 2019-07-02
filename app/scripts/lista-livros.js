@@ -1,9 +1,14 @@
+// Declarações
+const filterInput = $('#filterInput');
+const filterButton = $('#filterButton');
 const books = [
 	{code: 1, isbn: 1234, title: 'JavaScript', year: 2019, author: 'Hugo', publisher: 'Editora'},
 	{code: 2, isbn: 1235, title: 'PHP', year: 2019, author: 'Hugo', publisher: 'Editora'},
 	{code: 3, isbn: 1236, title: 'FrontEnd', year: 2019, author: 'Hugo', publisher: 'Editora'},
 	{code: 4, isbn: 1237, title: 'Angular', year: 2019, author: 'Hugo', publisher: 'Editora'}
 ];
+
+// Funções
 
 function compare(container, contains) {
 	return ('' + container).toLowerCase().indexOf(('' + contains).toLocaleLowerCase()) > -1;
@@ -20,6 +25,14 @@ function filterBooks(filter) {
 
 function loadBooks(books) {
 	const tableBody = $('#table-body');
+	/**
+		Remove todos elementos da tabela.
+
+		Por ser uma HTMLCollection, uso spread operator (...) para separar os
+		elementos em um array ([]) e tenho, assim, acesso ao método forEach,
+		onde posso ir removendo os elementos um a um.
+	*/
+	[...tableBody.children].forEach(child => tableBody.removeChild(child));
 
 	(books.length ? books : []).forEach((book, index) => {
 		// Cria elemento linha
@@ -54,7 +67,18 @@ function createTd(book, property, index) {
 	return td;
 }
 
-window.addEventListener('load',  event => {
-	loadBooks(books);
-});
+function filterElementsOnTableUsingInputFilter() {
+	const filterText = filterInput.value;
+	const filteredBooks = filterBooks(filterText);
+	loadBooks(filteredBooks);
+}
+
+// Controle de eventos
+
+window.addEventListener('load',  () => loadBooks(books));
+
+filterButton.addEventListener('click', filterElementsOnTableUsingInputFilter);
+
+filterInput.addEventListener('keypress', event =>
+    (event.keyCode == 13) && filterElementsOnTableUsingInputFilter());
 
