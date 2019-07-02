@@ -37,7 +37,7 @@ function loadBooks(books) {
 	(books.length ? books : []).forEach((book, index) => {
 		// Cria elemento linha
 		const row = document.createElement('tr');
-		row.id = `row-${index}`;
+		row.id = `tr-${index}`;
 
 		// Cria elementos célula
 		const tdCode = createTd(book, 'code', index);
@@ -47,6 +47,19 @@ function loadBooks(books) {
 		const tdAuthor = createTd(book, 'author', index);
 		const tdPublisher = createTd(book, 'publisher', index);
 
+		// Add action button
+		const deleteButton = document.createElement('button');
+		deleteButton.innerText = 'Delete';
+		deleteButton.id = `button-del-${index}`;
+		deleteButton.classList.add('btn');
+		deleteButton.classList.add('btn-danger');
+		deleteButton.addEventListener('click', event => {
+			deleteBook(book);
+		});
+
+		const tdActions = createTd(null, 'actions', index);
+		tdActions.appendChild(deleteButton);
+
 		// Adiciona células na linha
 		row.appendChild(tdCode);
 		row.appendChild(tdISBN);
@@ -54,6 +67,7 @@ function loadBooks(books) {
 		row.appendChild(tdYear);
 		row.appendChild(tdAuthor);
 		row.appendChild(tdPublisher);
+		row.appendChild(tdActions);
 
 		// Adiciona linha no tbody da tabela
 		tableBody.appendChild(row);
@@ -62,8 +76,8 @@ function loadBooks(books) {
 
 function createTd(book, property, index) {
 	const td = document.createElement('td');
-	td.id = `${property}-${index}`;
-	td.innerText = book[property];
+	td.id = `td-${property}-${index}`;
+	book  && (td.innerText = book[property]);
 	return td;
 }
 
@@ -71,6 +85,10 @@ function filterElementsOnTableUsingInputFilter() {
 	const filterText = filterInput.value;
 	const filteredBooks = filterBooks(filterText);
 	loadBooks(filteredBooks);
+}
+
+function deleteBook(book) {
+	console.log(`Book ${book.title} deleted`);
 }
 
 // Controle de eventos
