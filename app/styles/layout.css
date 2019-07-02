@@ -167,3 +167,10 @@ body {
 		width: 100vw;
 	}
 }
+
+/** Utilities **/
+.df-aic-jcc {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
