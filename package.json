@@ -1,0 +1,23 @@
+{
+  "name": "sessao-da-tarde-2019-frontend",
+  "version": "1.0.0",
+  "description": "Aplicação exemplo para a sessão da tarde 2019 na apresentaçaõ de Front End",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HDeiro/sessao-da-tarde-2019-frontend.git"
+  },
+  "author": "Hugo Deiró",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HDeiro/sessao-da-tarde-2019-frontend/issues"
+  },
+  "homepage": "https://github.com/HDeiro/sessao-da-tarde-2019-frontend#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1"
+  }
+}
