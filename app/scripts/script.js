@@ -1,4 +1,11 @@
 const $ = document.querySelector.bind(document);
+const menu = $('.menu');
+
+function toggleMenu() {
+	menu.classList.toggle('opened')
+}
+
+menu.addEventListener('click', toggleMenu);
 
 window.addEventListener('load',  event => {
 	// Controles do menu

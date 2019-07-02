@@ -49,7 +49,8 @@ function loadBooks(books) {
 
 		// Add action button
 		const deleteButton = document.createElement('button');
-		deleteButton.innerText = 'Delete';
+		deleteButton.title = `Deletar livro "${book.title}"`;
+		deleteButton.innerText = 'D';
 		deleteButton.id = `button-del-${index}`;
 		deleteButton.classList.add('btn');
 		deleteButton.classList.add('btn-danger');
