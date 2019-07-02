@@ -7,10 +7,6 @@
 	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./styles/layout.css">
 	<title>Sessão da Tarde</title>
-
-	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="./scripts/script.js"></script>
 </head>
 <body>
 	<div class="wrapper">
@@ -21,8 +17,8 @@
 				<a href="index.html">
 					<div class="menu-navigation-logo">
 						<img src="./assets/images/logo.png"
-							id="menu-navigation-logo-image"
-							alt="Logotipo da Sessão da Tarde">
+						id="menu-navigation-logo-image"
+						alt="Logotipo da Sessão da Tarde">
 					</div>
 				</a>
 
@@ -42,9 +38,26 @@
 			</header>
 
 			<section class="main-content">
-				Main Content here
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">Código</th>
+							<th scope="col">ISBN</th>
+							<th scope="col">Título</th>
+							<th scope="col">Ano</th>
+							<th scope="col">Autor</th>
+							<th scope="col">Editora</th>
+						</tr>
+					</thead>
+					<tbody id="table-body"></tbody>
+				</table>
 			</section>
 		</div>
 	</div>
+
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="./scripts/script.js"></script>
+	<script src="./scripts/lista-livros.js"></script>
 </body>
 </html>
