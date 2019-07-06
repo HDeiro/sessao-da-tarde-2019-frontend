@@ -1,0 +1,31 @@
+[
+	{
+		"code": 1,
+		"isbn": 1234,
+		"title": "JavaScript",
+		"year": 2019,
+		"author": "Hugo",
+		"publisher": "Editora"
+	}, {
+		"code": 2,
+		"isbn": 1235,
+		"title": "PHP",
+		"year": 2019,
+		"author": "Hugo",
+		"publisher": "Editora"
+	}, {
+		"code": 3,
+		"isbn": 1236,
+		"title": "FrontEnd",
+		"year": 2019,
+		"author": "Hugo",
+		"publisher": "Editora"
+	}, {
+		"code": 4,
+		"isbn": 1237,
+		"title": "Angular",
+		"year": 2019,
+		"author": "Hugo",
+		"publisher": "Editora"
+	}
+]
