@@ -44,7 +44,44 @@
 			</header>
 
 			<section class="main-content">
-				Main Content here
+				<form id="form-livro">
+					<div class="form-group">
+					  <label for="inputTitle">Título</label>
+					  <input type="text" class="form-control" required
+					  	id="inputTitle" aria-describedby="TitleHelp" placeholder="Título do Livro">
+					</div>
+
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="inputISBN">ISBN</label>
+							<input type="number" class="form-control" required
+								id="inputISBN" aria-describedby="ISBNHelp" placeholder="ISBN do Livro">
+							<small id="ISBNHelp" class="form-text text-muted">International Standart Book Number (ISBN) do livro</small>
+						</div>
+
+						<div class="form-group col-md-6">
+						<label for="inputYear">Ano</label>
+						<input type="number" class="form-control" max="9999" min="0" required
+							id="inputYear" aria-describedby="YearHelp" placeholder="Ano do Livro">
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group col-md-6">
+						<label for="inputAuthor">Autor</label>
+						<input type="text" class="form-control" required
+							id="inputAuthor" aria-describedby="AuthorHelp" placeholder="Autor do Livro">
+						</div>
+
+						<div class="form-group col-md-6">
+						<label for="inputPublisher">Editora</label>
+						<input type="text" class="form-control" required
+							id="inputPublisher" aria-describedby="PublisherHelp" placeholder="Editora do Livro">
+						</div>
+					</div>
+
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
 			</section>
 		</div>
 	</div>
@@ -52,5 +89,6 @@
 	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="./scripts/script.js"></script>
+	<script src="./scripts/registro-livros.js"></script>
 </body>
 </html>

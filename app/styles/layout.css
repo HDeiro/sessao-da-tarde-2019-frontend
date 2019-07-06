@@ -19,6 +19,14 @@ body {
 	overflow-x: hidden;
 }
 
+form.submited input:invalid {
+	border-color: #DC3545;
+}
+
+form.submited input:invalid:focus {
+    box-shadow: 0 0 10px #DC3545 !important;
+}
+
 /** Main Wrapper **/
 
 .wrapper {
@@ -174,3 +182,4 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+
