@@ -10,7 +10,7 @@ function compare(container, contains) {
 }
 
 function filterBooks(filter) {
-	return books.filter(book => compare(book.code, filter)
+	return bookList.filter(book => compare(book.code, filter)
 		|| compare(book.isbn, filter)
 		|| compare(book.title, filter)
 		|| compare(book.year, filter)

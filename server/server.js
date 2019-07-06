@@ -12,7 +12,14 @@ app.options('*', cors());
 app.get('/books', (request, response) => response.send(JSON.stringify(dataPayload)));
 
 app.post('/books', (request, response) => {
-	response.send('OK');
+	const newBook = request.body;
+	newBook.code = dataPayload.length + 1;
+	dataPayload.push(newBook);
+	fs.writeFileSync('./server/data.json', JSON.stringify(dataPayload), 'utf8');
+	response.send({
+		'message': 'Livro cadastrado com sucesso',
+		'livro': newBook
+	});
 });
 
 app.delete('/books/:code', (request, response) => {
@@ -21,7 +28,7 @@ app.delete('/books/:code', (request, response) => {
 	let found = dataPayload.find((item, index) => {
 		if(item.code == code) {
 			dataPayload.splice(index, 1);
-		//	fs.writeFileSync('./server/data.json', JSON.stringify(dataPayload), 'utf8');
+			fs.writeFileSync('./server/data.json', JSON.stringify(dataPayload), 'utf8');
 			return true;
 		}
 	});
