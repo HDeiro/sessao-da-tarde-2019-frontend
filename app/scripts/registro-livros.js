@@ -30,7 +30,7 @@ form.addEventListener('submit', async event => {
 	let formPayload = {
 		title: title.value,
 		isbn: isbn.value,
-		year: isbn.value,
+		year: year.value,
 		author: author.value,
 		publisher: publisher.value
 	};
