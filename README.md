@@ -19,12 +19,12 @@ npm i
 #### Server Side
 
 ```bash
-node <caminho-para-projeto>/sessao-da-tarde-2019-frontend/server.js
+node <caminho-para-projeto>/sessao-da-tarde-2019-frontend/server/server.js
 ```
 #### Client Side
 
 ```bash
-cd <caminho-para-projeto>/sessao-da-tarde-2019-frontend
+cd <caminho-para-projeto>/sessao-da-tarde-2019-frontend/app
 http-server
 ```
 
